@@ -13,3 +13,9 @@ spring:
 server:
   port: 8083
 
+ms1:
+  url: "http://localhost:8081/clients/"
+
+credit:
+  limit: 2000000
+
