@@ -26,8 +26,8 @@ public class Account {
     private Long productId;
     private BigDecimal balance;
     private BigDecimal interestRate;
-    private Boolean isRecalc = false;
-    private Boolean cardExist = false;
+    private Boolean isRecalc;
+    private Boolean cardExist;
     @Enumerated(EnumType.STRING)
     private Status status;
 
