@@ -17,3 +17,14 @@ spring:
 
 server:
   port: 8084
+
+logging:
+  service-name: service_name
+
+metrics:
+  execution-limit-ms: 500
+
+cache:
+  ttl-seconds: 120
+
+
