@@ -5,3 +5,5 @@ databaseChangeLog:
       file: db/migration/002.sql
   - include:
       file: db/migration/003.sql
+  - include:
+      file: db/migration/004.sql

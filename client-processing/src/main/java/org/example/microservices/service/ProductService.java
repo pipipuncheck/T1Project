@@ -11,6 +11,7 @@ import org.example.microservices.util.mapper.ProductRequestToProductMapper;
 import org.example.microservices.util.mapper.ProductMapper;
 import org.example.microservices.web.dto.ProductRequest;
 import org.example.microservices.web.dto.ProductResponse;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -41,6 +42,7 @@ public class ProductService {
     }
 
     @Transactional
+    @PreAuthorize("hasRole('MASTER')")
     public ProductResponse create(ProductRequest productRequest){
 
         log.info("Создание продукта: {}", productRequest);
@@ -60,6 +62,7 @@ public class ProductService {
     }
 
     @Transactional
+    @PreAuthorize("hasRole('MASTER') or hasRole('GRAND_EMPLOYEE')")
     public ProductResponse update(Long id, ProductRequest productRequest){
 
         log.info("Обновление продукта с id = {} : {}", id, productRequest);
@@ -78,6 +81,7 @@ public class ProductService {
         return productMapper.toDTO(savedProduct);
     }
 
+    @PreAuthorize("hasRole('MASTER') or hasRole('GRAND_EMPLOYEE')")
     public void delete(Long id){
 
         log.info("Удалерние продукта с id={}", id);

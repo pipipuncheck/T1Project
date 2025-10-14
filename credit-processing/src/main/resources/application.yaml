@@ -14,7 +14,7 @@ server:
   port: 8083
 
 ms1:
-  url: "http://localhost:8081/clients/"
+  url: "http://localhost:8081/api/clients/"
 
 credit:
   limit: 2000000
