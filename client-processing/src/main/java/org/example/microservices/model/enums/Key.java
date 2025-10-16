@@ -2,5 +2,7 @@ package org.example.microservices.model.enums;
 
 public enum Key {
 
-    DC, CC, AC, IPO, PC, PENS, NS, INS, BS
+    DC, CC, AC, IPO, PC, PENS, NS, INS, BS,
+    CLIENT_GROUP,
+    CREDIT_GROUP
 }
